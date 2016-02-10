@@ -78,7 +78,7 @@ public class ContenedorPrincipal {
             agenteControlador.start();
             agenteControlador = mainContainer.createNewAgent("LosSauses",LosSauses.class.getName(),null);
             agenteControlador.start();
-            agenteControlador = mainContainer.createNewAgent("ManuelaCañizares",ManuelaCanizares.class.getName(),null);
+            agenteControlador = mainContainer.createNewAgent("ManuelaCanizares",ManuelaCanizares.class.getName(),null);
             agenteControlador.start();
             agenteControlador = mainContainer.createNewAgent("MarinCentral",MarinCentral.class.getName(),null);
             agenteControlador.start();
