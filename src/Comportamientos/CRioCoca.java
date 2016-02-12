@@ -49,7 +49,7 @@ public class CRioCoca extends Behaviour{
     	LosSauses.setLocalName("LosSauses");
 
     	AID ManuelaCanizares=new AID();
-    	ManuelaCanizares.setLocalName("ManuelaCañizares");
+    	ManuelaCanizares.setLocalName("ManuelaCanizares");
 
     	AID MarinCentral=new AID();
     	MarinCentral.setLocalName("MarinCentral");
