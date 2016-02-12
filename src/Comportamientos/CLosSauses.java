@@ -18,7 +18,7 @@ import jade.lang.acl.ACLMessage;
  */
 public class CLosSauses extends Behaviour
 {
-
+ public String  imprimir;
     @Override
     public void action() 
     {
@@ -27,6 +27,7 @@ public class CLosSauses extends Behaviour
         STemperatura sense = new STemperatura();
         
     	AireAcond vent = new AireAcond();
+        imprimir = sense.toString() + vent.toString();
         if(sense.getVar()>20)
         {
             vent.encender();

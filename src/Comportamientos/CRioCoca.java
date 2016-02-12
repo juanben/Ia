@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import org.jgap.Configuration;
 
 import Actuadores.AireAcond;
-
+import Actuadores.EnviarBus;
 import Genetica.TestEstacionesFitness;
 import Sensores.SNumGente;
 import Sensores.STemperatura;
@@ -59,6 +59,7 @@ public class CRioCoca extends Behaviour{
         STemperatura sense = new STemperatura();
         
     	AireAcond vent = new AireAcond();
+    	EnviarBus env = new EnviarBus();
         rioCoca = numGente.getVar();
         if(sense.getVar()>20)
         {
@@ -541,10 +542,13 @@ public class CRioCoca extends Behaviour{
 			test.initialize();
 			test.testSelectFittestMovies();
 			Configuration.reset();
+			env.enviar();
 		} catch (Exception ex) {
             Logger.getLogger(CRioCoca.class.getName()).log(Level.SEVERE, null, ex);
+            env.noEnviar();
         }
         
+    	System.out.println(env.toString());
     	
     	try {
 			Thread.sleep(5000);

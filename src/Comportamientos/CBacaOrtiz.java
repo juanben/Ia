@@ -15,7 +15,9 @@ import jade.lang.acl.ACLMessage;
  *
  * @author juan
  */
-public class CBacaOrtiz extends Behaviour{
+public class CBacaOrtiz extends Behaviour
+{
+    public String imprimir="";
 
     @Override
     public void action() 
@@ -37,6 +39,7 @@ public class CBacaOrtiz extends Behaviour{
         }
         System.out.println(sense.toString());
         System.out.println(vent.toString());
+        imprimir = sense.toString() + vent.toString();
     	
         
         ACLMessage mensajeRioCoca = getAgent().blockingReceive();

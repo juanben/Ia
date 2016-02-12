@@ -17,7 +17,7 @@ import jade.lang.acl.ACLMessage;
  */
 public class CManuelaCanizares extends Behaviour 
 {
-
+ public String  imprimir;
     @Override
     public void action() {
     	
@@ -25,6 +25,7 @@ public class CManuelaCanizares extends Behaviour
         STemperatura sense = new STemperatura();
         
     	AireAcond vent = new AireAcond();
+        imprimir = sense.toString() + vent.toString();
         if(sense.getVar()>20)
         {
             vent.encender();
