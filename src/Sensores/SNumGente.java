@@ -31,13 +31,13 @@ public class SNumGente
             
 	   int a;
 	   Random numero = new Random();
-           if (x==1)
+           if (x==2)
            {
-               a= (numero.nextInt()%100)+1;
+               a= (numero.nextInt(100));
            }
            else
            {
-               a= (numero.nextInt()%300)+1;
+               a= (numero.nextInt(300));
            }
 	   
 	   return a;

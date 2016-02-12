@@ -5,7 +5,9 @@
  */
 package Comportamientos;
 
+import Actuadores.AireAcond;
 import Sensores.SNumGente;
+import Sensores.STemperatura;
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 
@@ -13,12 +15,29 @@ import jade.lang.acl.ACLMessage;
  *
  * @author juan
  */
-public class CManuelaCanizares extends Behaviour {
+public class CManuelaCanizares extends Behaviour 
+{
 
     @Override
     public void action() {
     	
     	SNumGente numGente=new SNumGente(2);
+        STemperatura sense = new STemperatura();
+        
+    	AireAcond vent = new AireAcond();
+        if(sense.getVar()>20)
+        {
+            vent.encender();
+        }
+        else 
+        {
+            if(sense.getVar()<13)
+            {
+                vent.apagar();
+            }
+        }
+        System.out.println(sense.toString());
+        System.out.println(vent.toString());
     	
     	ACLMessage mensajeRioCoca = getAgent().blockingReceive();
     	if (mensajeRioCoca!= null)

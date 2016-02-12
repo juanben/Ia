@@ -5,6 +5,7 @@
  */
 package Sensores;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -14,11 +15,12 @@ import java.util.Random;
 public class STemperatura 
 {
     	 private double var;
-
+//DecimalFormat df = new DecimalFormat("0.00"); 
 	public STemperatura() {
 		super();
 		// TODO Auto-generated constructor stub
 		var = randomico();
+                
 	}	
 	public double getVar() {
 		return var;
@@ -30,13 +32,13 @@ public class STemperatura
 	{
 	   double a;
 	   Random numero = new Random();
-	   a= (numero.nextDouble()+ (numero.nextInt()%30)) + 1;
+	   a= (numero.nextDouble()+ numero.nextInt(30) )+ 1;
 	   
 	   return a;
 	}
 	@Override
 	public String toString() {
-		return "STemperatura [var=" + var + "]";
+		return "STemperatura [var=" + var+ "]";
 	}
 
     

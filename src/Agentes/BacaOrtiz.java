@@ -25,7 +25,8 @@ public class BacaOrtiz extends Agent
     }
 
     @Override
-    protected void takeDown() {
+    protected void takeDown() 
+    {
         super.takeDown(); //To change body of generated methods, choose Tools | Templates.
     }
  
